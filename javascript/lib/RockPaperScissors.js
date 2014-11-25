@@ -12,11 +12,12 @@ Player.prototype.picks = function(pick) {
 };
 
 Game.prototype.winner = function() {
-  if (this.player1.pick === 'rock' && this.player2.pick === 'scissors') return this.player1;
-  if (this.player1.pick === 'rock' && this.player2.pick === 'paper') return this.player2;
-  if (this.player1.pick === 'paper' && this.player2.pick === 'rock') return this.player1;
-  if (this.player1.pick === 'paper' && this.player2.pick === 'scissors') return this.player2;
-  if (this.player1.pick === 'scissors' && this.player2.pick === 'paper') return this.player1;
-  if (this.player1.pick === 'scissors' && this.player2.pick === 'rock') return this.player2;
+  var pairs = {
+    'rock': 'scissors',
+    'paper': 'rock',
+    'scissors': 'paper'
+  };
   if (this.player1.pick === this.player2.pick) return null;
+  if (pairs[this.player1.pick] === this.player2.pick) return this.player1;
+  else return this.player2;
 };
