@@ -1,7 +1,7 @@
 class Game
 
   PAIRS = {
-    rock:     { beats: :scissors },
+    rock:     { beats: :scissors, :spock },
     paper:    { beats: :rock },
     scissors: { beats: :paper }
   }.freeze

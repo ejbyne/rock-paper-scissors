@@ -1,42 +1,17 @@
-Title
-=======================
+Paper Rock Scissors built in Javascript
+=======================================
 
-## Synopsis
+## Overview
 
-TODO: Enter a description of your project here.
+Write up of Rock Paper Scissors in Javascript.
 
-![NAME_OF_IMAGE](http://ENTER_URL)
+## Tech
 
-## Technologies Used
-
-- LANGUAGE_ONE
-- LANGUAGE_TWO
-- FRAMEWORK
-- TESTING SUITES
-
-## Job List
-
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-
-## Favourite Code Snippet
-
-~~~
- TODO: paste code here
-~~~
+- Javascript
+- TDD in Jasmine
 
 ## Collaborators
 
-- NAME_ONE (http://www.github.com/USERNAME)
-- NAME_TWO (http://www.github.com/USERNAME)
-
-## Still to complete/refactor
-
-- [ ]
-- [ ]
-
-## Takeaway
-
-TODO: Enter a personal reflection and/or things you learnt
+- Edward Byne (http://www.github.com/ejbyne)
+- Christopher Batts (http://www.github.com/chrisjbatts)
+- Sam Joseph (http://www.github.com/tansaku)
