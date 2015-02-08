@@ -1,0 +1,10 @@
+<h2>Result</h2>
+<% if @winner == "Draw!" %>
+	<p>It was a draw!</p>
+<% else %>
+	<p><%= @winner.name %> is the winner!</p>
+<% end %>
+
+<form action='/singleplayer/restartgame' method='post'>
+  <input type='submit' value='Try again!'>
+</form>
