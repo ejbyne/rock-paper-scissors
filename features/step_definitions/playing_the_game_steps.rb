@@ -16,5 +16,15 @@ Given(/^I have selected my weapon$/) do
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('You have')
+  expect(page).to have_content('Result')
+end
+
+Given(/^I have seen the result$/) do
+  step('I have started the game')
+  step('I select my weapon')
+  step('I click "Select"')
+end
+
+Then(/^I should be able to play again$/) do
+  expect(page).to have_content('Select your weapon!')
 end

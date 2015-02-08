@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative '../lib/player'
+require_relative '../lib/computer'
+require_relative '../lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -12,14 +15,24 @@ class RockPaperScissors < Sinatra::Base
     erb :registration
   end
 
-  post '/game' do
+  post '/newgame' do
+    @player = Player.new(params[:player_name])
+    @computer = Computer.new('Computer')
+    GAME = Game.new(@player, @computer)
+    erb :game
+  end
+
+  post '/restartgame' do
     erb :game
   end
 
   post '/result' do
+    choice = params[:choice].to_sym
+    GAME.player1.picks(choice)
+    GAME.player2.picks
+    @winner = GAME.winner?
     erb :result
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

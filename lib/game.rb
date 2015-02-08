@@ -8,7 +8,7 @@ class Game
 		@pairs = { rock: :scissors, scissors: :paper, paper: :rock }
 	end
 
-	def winner
+	def winner?
 		return "Draw!" if @player1.pick == @player2.pick
 		@pairs[@player1.pick] == @player2.pick ? @player1 : @player2
 	end

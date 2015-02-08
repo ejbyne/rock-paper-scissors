@@ -18,7 +18,7 @@ describe Game do
   it "should know when a game has been drawn" do
   	player3 = double :player, pick: :rock
   	game = Game.new(player1, player3)
-  	expect(game.winner).to eq("Draw!")
+  	expect(game.winner?).to eq("Draw!")
   end
 
 end
