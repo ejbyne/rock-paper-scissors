@@ -7,12 +7,12 @@ end
 
 When(/^I select my weapon$/) do
   select 'Rock', :from => 'choice'
-  click_button 'Select'
 end
 
 Given(/^I have selected my weapon$/) do
   step('I have started the game')
   step('I select my weapon')
+  step('I click "Select"')
 end
 
 Then(/^I should see if I have won$/) do
