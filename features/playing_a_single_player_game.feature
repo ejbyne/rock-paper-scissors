@@ -4,7 +4,7 @@ Feature: Playing the game
   I want to select the winning weapon
 
 Scenario: Selecting a weapon
-  Given I have started the game
+  Given I have started a single player game
   Then I should be able to select my weapon
 
 Scenario: Seeing the result

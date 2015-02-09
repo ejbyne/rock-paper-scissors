@@ -10,6 +10,10 @@ class Player
     @pick = weapon
   end
 
+  def picked?
+  	@pick
+  end
+
   def reset_pick
   	@pick = false
   end

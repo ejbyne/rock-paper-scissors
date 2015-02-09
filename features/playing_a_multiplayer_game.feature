@@ -4,12 +4,13 @@ Feature: Playing the game
   I want to select the winning weapon
 
 Scenario: Selecting a weapon
-  Given I have started the game
-  When I select my weapon
+  Given I have started a multiplayer game
+  When I have selected my weapon
+  And I click "Select"
   Then I should see "Waiting for other player..."
 
 Scenario: Seeing the result
-  Given I have selected my weapon
+  Given I am the first player to have selected a weapon
   When the other player has also selected his weapon
   Then I should see if I have won
 

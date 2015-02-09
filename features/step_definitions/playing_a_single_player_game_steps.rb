@@ -1,17 +1,15 @@
-Given(/^I have started the game$/) do
-  visit '/'
-  step('I click "Single Player Game"')
+Given(/^I have started a single player game$/) do
   step('I enter my name')
   step('I click "Start Game!"')
 end
 
-When(/^I select my weapon$/) do
-  select 'Rock', :from => 'choice'
+Then(/^I should be able to select my weapon$/) do
+  expect(page).to have_content('Select your weapon!')
 end
 
 Given(/^I have selected my weapon$/) do
-  step('I have started the game')
-  step('I select my weapon')
+  step('I have started a single player game')
+  select 'Rock', :from => 'choice'
   step('I click "Select"')
 end
 
@@ -20,9 +18,7 @@ Then(/^I should see if I have won$/) do
 end
 
 Given(/^I have seen the result$/) do
-  step('I have started the game')
-  step('I select my weapon')
-  step('I click "Select"')
+  step('I have selected my weapon')
 end
 
 Then(/^I should be able to play again$/) do

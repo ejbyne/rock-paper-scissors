@@ -9,6 +9,7 @@ Scenario: Visiting the homepage
   Then I should see "Please enter your name"
 
 Scenario: Entering the game
-  Given I enter my name
-  When I click "Start Game!"
+	Given I select a multiplayer game
+  When I enter my name
+  And I click "Start Game!"
   Then I should see "Select your weapon!"

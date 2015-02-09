@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-	let (:player1) { double :player, pick: :rock, object_id: 1 }
-	let (:player2) { double :player, pick: :scissors, object_id: 2 }
+	let (:player1) { double :player, pick: :rock, object_id: 1, picked?: true }
+	let (:player2) { double :player, pick: :scissors, object_id: 2, picked?: true }
 	let (:game) { Game.new }
 
   before do
@@ -19,15 +19,28 @@ describe Game do
     expect(game.select_player_by_id(1)).to be(player1)
   end
 
+  it "should know when the game is not ready" do
+    player3 = double :player, picked?: false
+    player4 = double :player, picked?: false
+    game = Game.new
+    game.add_player(player3)
+    game.add_player(player4)
+    expect(game).not_to be_ready
+  end
+
+  it "should know when the game is ready" do
+    expect(game).to be_ready
+  end
+
   it "should know who has won the game" do
   	expect(game.winner).to be(player1)
   end
 
   it "should know when a game has been drawn" do
-  	player3 = double :player, pick: :rock
+  	player5 = double :player, pick: :rock
   	game = Game.new
     game.add_player(player1)
-    game.add_player(player3)
+    game.add_player(player5)
   	expect(game.winner).to eq("Draw!")
   end
 

@@ -19,22 +19,21 @@ class RockPaperScissors < Sinatra::Base
     erb :'singleplayer/registration'
   end
 
-  post '/singleplayer/newgame' do
-    GAME = Game.new
+  post '/singleplayer/new' do
     GAME.add_player(Player.new(params[:player_name]))
     GAME.add_player(Computer.new('Computer'))
     erb :'singleplayer/game'
   end
 
   post '/singleplayer/result' do
-    choice = params[:choice].to_sym
-    GAME.players[0].picks(choice)
+    pick = params[:choice].to_sym
+    GAME.players[0].picks(pick)
     GAME.players[1].picks
     @winner = GAME.winner
     erb :'singleplayer/result'
   end
 
-  post '/singleplayer/restartgame' do
+  post '/singleplayer/restart' do
     erb :'singleplayer/game'
   end
 
@@ -42,18 +41,22 @@ class RockPaperScissors < Sinatra::Base
     erb :'multiplayer/registration'
   end
 
-  post '/multiplayer/newgame' do
-    @player = Player.new(params[:player_name])
-    session[:me] = @player.object_id
-    GAME.add_player(@player)
+  post '/multiplayer/new' do
+    player = Player.new(params[:player_name])
+    session[:me] = player.object_id
+    GAME.add_player(player)
     erb :'multiplayer/game'
   end
 
-  post '/multiplayer/waiting' do
-    choice = params[:choice].to_sym
+  post '/multiplayer/choice' do
+    pick = params[:choice].to_sym
     player = GAME.select_player_by_id(session[:me])
-    player.picks(choice)
-    redirect '/multiplayer/result' if GAME.players.each { |player| player.pick }
+    player.picks(pick)
+    redirect '/multiplayer/waiting'
+  end
+
+  get '/multiplayer/waiting' do
+    redirect '/multiplayer/result' if GAME.ready?
     erb :'multiplayer/waiting'
   end
 
@@ -62,7 +65,7 @@ class RockPaperScissors < Sinatra::Base
     erb :'multiplayer/result'
   end
 
-  post '/singleplayer/restartgame' do
+  post '/multiplayer/restart' do
     GAME.players.each { |player| player.reset_pick }
     erb :'multiplayer/game'
   end

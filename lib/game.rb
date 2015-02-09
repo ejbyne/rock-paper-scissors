@@ -15,6 +15,10 @@ class Game
 		@players.select { |player| player.object_id == id }.first
 	end
 
+  def ready?
+  	@players.length == 2 && @players[0].picked? && @players[1].picked?
+  end
+
 	def winner
 		return "Draw!" if @players[0].pick == @players[1].pick
 		@pairs[@players[0].pick] == @players[1].pick ? @players[0] : @players[1]
