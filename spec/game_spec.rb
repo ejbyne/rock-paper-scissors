@@ -1,4 +1,4 @@
-require 'game'
+require_relative '../app/models/game'
 
 describe Game do
 
@@ -20,8 +20,8 @@ describe Game do
   end
 
   it "should know when the game is not ready" do
-    player3 = double :player, picked?: false
-    player4 = double :player, picked?: false
+    player3 = double :player, picked?: false, attempt: 1
+    player4 = double :player, picked?: false, attempt: 1
     game = Game.new
     game.add_player(player3)
     game.add_player(player4)

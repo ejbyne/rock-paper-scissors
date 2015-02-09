@@ -1,4 +1,4 @@
-require 'player'
+require_relative '../app/models/player'
 
 describe Player do
 
@@ -22,15 +22,18 @@ describe Player do
     expect(player).to be_picked
   end
 
-  it "should be able to reset his or her pick" do
-  	player.reset_pick
-  	expect(player.pick).to be(false)
-  end
-
   it "knows his or her number of attempts" do
     expect(player.attempt).to eq(1)
     player.next_attempt
     expect(player.attempt).to eq(2)
+  end
+
+  it "sets picked to false when starting the next attempt" do
+    expect(player).not_to be_picked
+    # player.picks(:rock)
+    # expect(player).to be_picked
+    # player.next_attempt
+    # expect(player).not_to be_picked
   end
 
 end

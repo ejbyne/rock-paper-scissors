@@ -5,21 +5,20 @@ class Player
   def initialize(name)
     @name = name
     @attempt = 1
+    @picked = false
   end
 
   def picks(weapon)
     @pick = weapon
+    @picked = true
   end
 
   def picked?
-  	@pick
-  end
-
-  def reset_pick
-  	@pick = false
+    @picked
   end
 
   def next_attempt
+    @picked = false
     @attempt += 1
   end
 
