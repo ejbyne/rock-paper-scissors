@@ -1,5 +1,6 @@
 Given(/^I visit the homepage$/) do
-  visit '/'
+	visit('/reset')
+  visit('/')
 end
 
 When(/^I click "(.*?)"$/) do |arg1|

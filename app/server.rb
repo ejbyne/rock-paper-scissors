@@ -70,5 +70,9 @@ class RockPaperScissors < Sinatra::Base
     erb :'multiplayer/game'
   end
 
+  get '/reset' do
+    GAME = Game.new
+  end
+
   run! if app_file == $0
 end

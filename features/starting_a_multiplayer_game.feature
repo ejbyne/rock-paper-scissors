@@ -4,12 +4,11 @@ Feature: Starting a multiplayer game
   I want to start a new multiplayer game
 
 Scenario: Visiting the homepage
-  Given I visit the homepage
-  When I click "Multiplayer Game"
-  Then I should see "Please enter your name"
+  Given I am the first player to visit the homepage
+  When I am the first player to click "Multiplayer Game"
+  Then as the first player I should see "Please enter your name"
 
 Scenario: Entering the game
-	Given I select a multiplayer game
-  When I enter my name
-  And I click "Start Game!"
-  Then I should see "Select your weapon!"
+	Given I am the first player to select a multiplayer game
+  When I am the first player to enter my name
+  Then as the first player I should see "Select your weapon!"

@@ -1,4 +1,5 @@
 Given(/^I have started a single player game$/) do
+	visit('/reset')
   step('I enter my name')
   step('I click "Start Game!"')
 end
