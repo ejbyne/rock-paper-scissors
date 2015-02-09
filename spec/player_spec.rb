@@ -27,4 +27,10 @@ describe Player do
   	expect(player.pick).to be(false)
   end
 
+  it "knows his or her number of attempts" do
+    expect(player.attempt).to eq(1)
+    player.next_attempt
+    expect(player.attempt).to eq(2)
+  end
+
 end

@@ -1,9 +1,10 @@
 class Player
 
-  attr_reader :name, :pick
+  attr_reader :name, :pick, :attempt
 
   def initialize(name)
     @name = name
+    @attempt = 1
   end
 
   def picks(weapon)
@@ -16,6 +17,10 @@ class Player
 
   def reset_pick
   	@pick = false
+  end
+
+  def next_attempt
+    @attempt += 1
   end
 
 end

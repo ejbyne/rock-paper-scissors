@@ -16,7 +16,7 @@ class Game
 	end
 
   def ready?
-  	@players.length == 2 && @players[0].picked? && @players[1].picked?
+  	@players.length == 2 && @players[0].picked? && @players[1].picked? && @players[0].attempt == @players[1].attempt
   end
 
 	def winner

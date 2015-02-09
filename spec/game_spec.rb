@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-	let (:player1) { double :player, pick: :rock, object_id: 1, picked?: true }
-	let (:player2) { double :player, pick: :scissors, object_id: 2, picked?: true }
+	let (:player1) { double :player, pick: :rock, object_id: 1, picked?: true, attempt: 1 }
+	let (:player2) { double :player, pick: :scissors, object_id: 2, picked?: true, attempt: 1 }
 	let (:game) { Game.new }
 
   before do

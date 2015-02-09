@@ -66,7 +66,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/multiplayer/restart' do
-    GAME.players.each { |player| player.reset_pick }
+    player = GAME.select_player_by_id(session[:me])
+    player.reset_pick
+    player.next_attempt
     erb :'multiplayer/game'
   end
 
