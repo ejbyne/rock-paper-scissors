@@ -6,7 +6,7 @@ Our Week 3 challenge at Makers Academy was to build a Rock Paper Scissors web ap
 
 With Cucumber feature tests I used behaviour driven development to create the structure of the application. I started by creating a single player game, so that the computer player chooses a random choice, and used TDD to build the game logic in Ruby. I then went on to create a multiplayer game, which involved creating additional feature tests and adding sessions and separate controllers and views for the multiplayer version.
 
-This was a useful exercise in terms of consolidating what we have previously learned during the Battleships project, in particular using the Cucumber and Capybara testing frameworks and integrating our Ruby code into the Sinatra web framework.
+This was a useful exercise in terms of consolidating what I had previously learned during the Battleships project, in particular using the Cucumber and Capybara testing frameworks and integrating our Ruby code into the Sinatra web framework.
 
 ## Technologies used
 - Ruby
