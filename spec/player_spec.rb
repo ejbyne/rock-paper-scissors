@@ -30,10 +30,6 @@ describe Player do
 
   it "sets picked to false when starting the next attempt" do
     expect(player).not_to be_picked
-    # player.picks(:rock)
-    # expect(player).to be_picked
-    # player.next_attempt
-    # expect(player).not_to be_picked
   end
 
 end
