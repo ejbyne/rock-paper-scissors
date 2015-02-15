@@ -2,9 +2,12 @@ class Game
 
 	attr_reader :players
 
+	PAIRS = { rock: :scissors,
+						scissors: :paper,
+						paper: :rock }
+
 	def initialize
 		@players = []
-		@pairs = { rock: :scissors, scissors: :paper, paper: :rock }
 	end
 
 	def add_player(player)
@@ -21,7 +24,7 @@ class Game
 
 	def winner
 		return "Draw!" if @players[0].pick == @players[1].pick
-		@pairs[@players[0].pick] == @players[1].pick ? @players[0] : @players[1]
+		PAIRS[@players[0].pick] == @players[1].pick ? @players[0] : @players[1]
 	end
 
 end
