@@ -8,12 +8,15 @@ With Cucumber feature tests I used behaviour driven development to create the st
 
 This was a useful exercise in terms of consolidating what I had previously learned during the Battleships project, in particular using the Cucumber and Capybara testing frameworks and integrating our Ruby code into the Sinatra web framework.
 
+The live version of the application can be viewed [here](https://ruby-rock-paper-scissors.herokuapp.com).
+
 ## Technologies used
 - Ruby
 - Sinatra
 - RSpec
 - Cucumber
 - Capybara
+- Heroku
 
 ## Screenshots
 ###Playing the game
