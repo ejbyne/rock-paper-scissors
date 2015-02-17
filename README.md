@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/ejbyne/ruby-rock-paper-scissors/badges/gpa.svg)](https://codeclimate.com/github/ejbyne/ruby-rock-paper-scissors)
+[![Test Coverage](https://codeclimate.com/github/ejbyne/ruby-rock-paper-scissors/badges/coverage.svg)](https://codeclimate.com/github/ejbyne/ruby-rock-paper-scissors)
+
 # Rock Paper Scissors (Ruby)
 
 ## Summary
