@@ -29,7 +29,7 @@ The live version of the application can be viewed [here](https://ruby-rock-paper
 
 ## Completed tasks
 - The player has to enter their name before the game
-- The player will be presented with the choices (rock, paper and scissors)
+- The player will be presented with the choices (rock, paper or scissors)
 - The player can choose one option
 - The game will choose a random option
 - A winner will be declared
